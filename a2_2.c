@@ -304,11 +304,11 @@ void main()
 		}
 		//printf("Here..i..%d\n",i);
 		for (j=0;j<I[i].n;j++){
-			int temp_ind = strlen(I[i].rhs[j])-1; // to make all the states that end with "S." accept. 
+			int temp_ind = strlen(I[i].rhs[j])-1; // to make the 1st state that end with "S." accept. 
 			
 			if (I[i].rhs[j][temp_ind] == '.'){
 				//printf("Here...j.%d\n",j);
-				if (I[i].rhs[j][temp_ind-1] == 'S')
+				if (I[i].rhs[j][temp_ind-1] == 'S' && i==1)
 					sprintf(slr[i][strchr(terminals,'$')-terminals],"accept");
 				else{
 					//printf("--->%d %d %c<---\n",i,j,I[i].lhs[j]);
